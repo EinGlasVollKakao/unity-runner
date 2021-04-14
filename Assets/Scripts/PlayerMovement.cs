@@ -4,13 +4,14 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     private Rigidbody rb;
-    
+
     private enum Path // Enum-obj for all possible paths
     {
         Left,
         Mid,
         Right
     }
+
     private Path currentPath = Path.Mid; // current path of player
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
@@ -26,13 +27,13 @@ public class PlayerMovement : MonoBehaviour
 
         //rb.AddForce(new Vector3(0, 0, 1), ForceMode.Acceleration);
     }
-    
+
     // Update is called once per frame
     void Update()
     {
         // **********Movement********** //
         // Jump when touching ground (collision check with empty object below player)
-        if (Input.GetKeyDown(KeyCode.Space) && Math.Abs(rb.velocity.y) < 0.1)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && Math.Abs(rb.velocity.y) < 0.1)
         {
             rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
         }
@@ -48,10 +49,10 @@ public class PlayerMovement : MonoBehaviour
         {
             ChangePathToBeOn(Direction.Left);
         }
-        
-        
+
+
         // Debug log
-        Debug.Log(currentPath + "-->" +  pathToBeOn);
+        Debug.Log(currentPath + "-->" + pathToBeOn);
     }
 
     private void FixedUpdate()
@@ -60,9 +61,7 @@ public class PlayerMovement : MonoBehaviour
         MoveToNewPath();
     }
 
-    
-    
-    
+
     private float GetPathX(Path path)
     {
         switch (path)
@@ -83,6 +82,7 @@ public class PlayerMovement : MonoBehaviour
         Right,
         Left
     }
+
     private void ChangePathToBeOn(Direction direction)
     {
         switch (direction)
@@ -92,12 +92,14 @@ public class PlayerMovement : MonoBehaviour
                 {
                     pathToBeOn++;
                 }
+
                 break;
             case Direction.Left:
                 if (pathToBeOn != Path.Left)
                 {
                     pathToBeOn--;
                 }
+
                 break;
         }
     }
@@ -105,11 +107,12 @@ public class PlayerMovement : MonoBehaviour
     private void MoveToNewPath()
     {
         Vector3 pos = rb.position;
-        
+
         if (pathToBeOn == currentPath)
         {
             return;
         }
+
         Vector3 pathPos = new Vector3(GetPathX(pathToBeOn), pos.y, pos.z);
         Vector3 newPos = Vector3.MoveTowards(pos, pathPos, horizontalMovSpeed);
 
@@ -121,9 +124,8 @@ public class PlayerMovement : MonoBehaviour
             currentPath = pathToBeOn;
         }
     }
-    
-    
-    
+
+
     private void MoveForward()
     {
         Vector3 pos = rb.position;
