@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     private Path currentPath = Path.Mid; // current path of player
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
+    private float forwardMovSpeed = 0.1f;
+    private float horizontalMovSpeed = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -108,7 +111,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         Vector3 pathPos = new Vector3(GetPathX(pathToBeOn), pos.y, pos.z);
-        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, 1);
+        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, horizontalMovSpeed);
 
         rb.MovePosition(newPos);
 
@@ -124,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
     private void MoveForward()
     {
         Vector3 pos = rb.position;
-        Vector3 forward = pos + new Vector3(0, 0, 1);
+        Vector3 forward = pos + new Vector3(0, 0, forwardMovSpeed);
 
         rb.MovePosition(forward);
     }
