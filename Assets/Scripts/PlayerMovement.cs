@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private Rigidbody rb;
+    
     private enum Path // Enum-obj for all possible paths
     {
         Left,
@@ -12,9 +14,6 @@ public class PlayerMovement : MonoBehaviour
     private Path currentPath = Path.Mid; // current path of player
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
-    private Rigidbody rb;
-
-    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        MoveForward();
         MoveToNewPath();
     }
 
@@ -117,5 +117,15 @@ public class PlayerMovement : MonoBehaviour
         {
             currentPath = pathToBeOn;
         }
+    }
+    
+    
+    
+    private void MoveForward()
+    {
+        Vector3 pos = rb.position;
+        Vector3 forward = pos + new Vector3(0, 0, 1);
+
+        rb.MovePosition(forward);
     }
 }
