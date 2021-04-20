@@ -34,8 +34,7 @@ public class PlayerMovement : MonoBehaviour
         // **********Movement********** //
         // Jump when touching ground (collision check with empty object below player)
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && Math.Abs(rb.velocity.y) < 0.1)
-        {
-            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
+        {            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
         }
 
         // right
