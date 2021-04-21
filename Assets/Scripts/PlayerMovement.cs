@@ -49,9 +49,7 @@ public class PlayerMovement : MonoBehaviour
             ChangePathToBeOn(Direction.Left);
         }
 
-
-        // Debug log
-        Debug.Log(currentPath + "-->" + pathToBeOn);
+        // Debug.Log(currentPath + "-->" + pathToBeOn);
     }
 
     private void FixedUpdate()
