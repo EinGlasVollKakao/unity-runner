@@ -12,12 +12,14 @@ public class PlayerScoreCount : MonoBehaviour
     
     void Start()
     {
-        startPos = transform.position; //set Start pos to pos where player is at beginning
+        startPos = new Vector3(0, 0, transform.position.z); //set Start pos to pos where player is at beginning; only set z 
     }
     
     void Update()
     {
-        score = (int) Vector3.Distance(startPos, transform.position);
+        Vector3 currentPos = new Vector3(0, 0, transform.position.z); // also only set z to measure only z distance
+        
+        score = (int) Vector3.Distance(startPos, currentPos);
         
         scoreText.text = score.ToString();
     }
