@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerScoreCount : MonoBehaviour
 {
     private Vector3 startPos;
     private int score;
+
+    [SerializeField] private TMP_Text scoreText;
     
     void Start()
     {
@@ -15,6 +18,7 @@ public class PlayerScoreCount : MonoBehaviour
     void Update()
     {
         score = (int) Vector3.Distance(startPos, transform.position);
-        Debug.Log(score);
+        
+        scoreText.text = score.ToString();
     }
 }
