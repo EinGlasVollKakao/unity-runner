@@ -14,7 +14,8 @@ public class PlayerCollide : MonoBehaviour
         {
             return;
         }
-        
+
+        Time.timeScale = 0;
         Debug.Log("RIP");
     }
 }
