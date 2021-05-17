@@ -8,6 +8,8 @@ public class PlayerScoreCount : MonoBehaviour
     private Vector3 startPos;
     private int score;
 
+    [SerializeField] private PlayerMovement playerMovement;
+
     [SerializeField] private TMP_Text scoreText;
     
     void Start()
@@ -22,5 +24,12 @@ public class PlayerScoreCount : MonoBehaviour
         score = (int) Vector3.Distance(startPos, currentPos);
         
         scoreText.text = score.ToString();
+        
+        
+        
+        // change speed multiplayer
+        playerMovement.MovementSpeedMultiplier = 1 + score / 1000f;
+        Debug.Log(playerMovement.MovementSpeedMultiplier);
+
     }
 }
