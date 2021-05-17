@@ -18,6 +18,13 @@ public class PlayerMovement : MonoBehaviour
     private float forwardMovSpeed = 0.1f;
     private float horizontalMovSpeed = 1;
 
+    private float movementSpeedMultiplier = 1;
+    public float MovementSpeedMultiplier
+    {
+        get => movementSpeedMultiplier;
+        set => movementSpeedMultiplier = value;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +39,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // **********Movement********** //
-        // Jump when touching ground (collision check with empty object below player)
+        // Jump when touching ground
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && Math.Abs(rb.velocity.y) < 0.1)
         {            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
         }
@@ -111,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 pathPos = new Vector3(GetPathX(pathToBeOn), pos.y, pos.z);
-        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, horizontalMovSpeed);
+        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, horizontalMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(newPos);
 
@@ -126,7 +133,7 @@ public class PlayerMovement : MonoBehaviour
     private void MoveForward()
     {
         Vector3 pos = rb.position;
-        Vector3 forward = pos + new Vector3(0, 0, forwardMovSpeed);
+        Vector3 forward = pos + new Vector3(0, 0, forwardMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(forward);
     }
