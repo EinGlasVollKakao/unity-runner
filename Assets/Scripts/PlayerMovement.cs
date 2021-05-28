@@ -45,9 +45,11 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         // **********Movement********** //
-        // Jump when touching ground
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) && Math.Abs(rb.velocity.y) < 0.1)
-        {            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
+        // Jump when touching ground (check if vertical velocity is near 0 AND if y is near starting y (ground)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W)) 
+            && Math.Abs(rb.velocity.y) < 0.1 && rb.position.y < startingPos.y + 0.1)
+        {           
+            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
         }
 
         // right
