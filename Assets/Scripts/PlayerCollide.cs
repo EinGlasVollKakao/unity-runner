@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerCollide : MonoBehaviour
 {
     [SerializeField] private LayerMask obstacleLayer;
+    [SerializeField] private PlayerMovement playerMovement;
     
     private void OnCollisionEnter(Collision collision)
     {
@@ -15,7 +16,9 @@ public class PlayerCollide : MonoBehaviour
             return;
         }
 
-        Time.timeScale = 0;
+        
         Debug.Log("RIP");
+        
+        playerMovement.ResetPlayer();
     }
 }
