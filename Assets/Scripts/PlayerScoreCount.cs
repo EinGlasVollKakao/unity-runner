@@ -28,7 +28,7 @@ public class PlayerScoreCount : MonoBehaviour
         
         
         // change speed multiplayer
-        playerMovement.MovementSpeedMultiplier = 1 + score / 1000f;
+        playerMovement.MovementSpeedMultiplier = 1 + score / 100f;
         Debug.Log(playerMovement.MovementSpeedMultiplier);
 
     }
