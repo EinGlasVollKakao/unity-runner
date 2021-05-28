@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private Path currentPath = Path.Mid; // current path of player
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
-    private float forwardMovSpeed = 0.1f;
-    private float horizontalMovSpeed = 1;
+    private const float ForwardMovSpeed = 0.1f;
+    private const float HorizontalMovSpeed = 1;
 
     private float movementSpeedMultiplier = 1;
     public float MovementSpeedMultiplier
@@ -25,17 +25,23 @@ public class PlayerMovement : MonoBehaviour
         set => movementSpeedMultiplier = value;
     }
 
+    // starting position for reseting
+    private Vector3 startingPos;
+
     // Start is called before the first frame update
+
+    // Update is called once per frame
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
+        
+        startingPos = rb.position;
+        
         rb.interpolation = RigidbodyInterpolation.Interpolate;
 
         //rb.AddForce(new Vector3(0, 0, 1), ForceMode.Acceleration);
     }
 
-    // Update is called once per frame
     void Update()
     {
         // **********Movement********** //
@@ -55,6 +61,7 @@ public class PlayerMovement : MonoBehaviour
         {
             ChangePathToBeOn(Direction.Left);
         }
+
 
         // Debug.Log(currentPath + "-->" + pathToBeOn);
     }
@@ -118,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         Vector3 pathPos = new Vector3(GetPathX(pathToBeOn), pos.y, pos.z);
-        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, horizontalMovSpeed * movementSpeedMultiplier);
+        Vector3 newPos = Vector3.MoveTowards(pos, pathPos, HorizontalMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(newPos);
 
@@ -131,10 +138,21 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void MoveForward()
-    {
+
+    {   
         Vector3 pos = rb.position;
-        Vector3 forward = pos + new Vector3(0, 0, forwardMovSpeed * movementSpeedMultiplier);
+        Vector3 forward = pos + new Vector3(0, 0, ForwardMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(forward);
+    }
+
+
+    public void ResetPlayer()
+    {
+        pathToBeOn = Path.Mid;
+        MovementSpeedMultiplier = 1;
+
+        // reset position
+        rb.position = startingPos;
     }
 }
