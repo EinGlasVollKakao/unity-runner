@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] UiController uiController;
+
     private Rigidbody rb;
 
     private enum Path // Enum-obj for all possible paths
@@ -44,14 +46,15 @@ public class PlayerMovement : MonoBehaviour
     }
     
     
+    
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
         startingPos = rb.position;
-        
         rb.interpolation = RigidbodyInterpolation.Interpolate;
+        
+        uiController.ShowStartHint();
     }
 
     void Update()
@@ -61,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
         {
             gamePaused = false;
 
+            uiController.HideHints();
+            
             // if player dead, reset player pos when 'unpausing'
             if (playerDead)
             {
