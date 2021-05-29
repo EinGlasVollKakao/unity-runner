@@ -9,7 +9,7 @@ public class PlayerScoreCount : MonoBehaviour
     private int score;
 
     [SerializeField] private PlayerMovement playerMovement;
-
+    
     [SerializeField] private TMP_Text scoreText;
     
     void Start()
@@ -19,17 +19,22 @@ public class PlayerScoreCount : MonoBehaviour
     
     void Update()
     {
-        Vector3 currentPos = new Vector3(0, 0, transform.position.z); // also only set z to measure only z distance
-        
-        score = (int) Vector3.Distance(startPos, currentPos);
-        
-        scoreText.text = score.ToString();
-        
-        
-        
-        // change speed multiplayer
-        playerMovement.MovementSpeedMultiplier = 1 + score / 100f;
-        Debug.Log(playerMovement.MovementSpeedMultiplier);
+        UpdateScore();
 
+        // change speed multiplayer
+        UpdateSpeedMultiplier();
+    }
+
+    private void UpdateScore()
+    {
+        Vector3 currentPos = new Vector3(0, 0, transform.position.z); // also only set z to measure only z distance
+        score = (int) Vector3.Distance(startPos, currentPos);
+        scoreText.text = score.ToString();
+    }
+    
+    private void UpdateSpeedMultiplier()
+    {
+        playerMovement.MovementSpeedMultiplier = 1 + score / 100f;
+        //Debug.Log(playerMovement.MovementSpeedMultiplier);
     }
 }
