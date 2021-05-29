@@ -28,9 +28,7 @@ public class PlayerMovement : MonoBehaviour
     // starting position for reseting
     private Vector3 startingPos;
 
-    // Start is called before the first frame update
 
-    // Update is called once per frame
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -38,8 +36,6 @@ public class PlayerMovement : MonoBehaviour
         startingPos = rb.position;
         
         rb.interpolation = RigidbodyInterpolation.Interpolate;
-
-        //rb.AddForce(new Vector3(0, 0, 1), ForceMode.Acceleration);
     }
 
     void Update()
@@ -63,9 +59,6 @@ public class PlayerMovement : MonoBehaviour
         {
             ChangePathToBeOn(Direction.Left);
         }
-
-
-        // Debug.Log(currentPath + "-->" + pathToBeOn);
     }
 
     private void FixedUpdate()
