@@ -9,6 +9,7 @@ public class PlayerCollide : MonoBehaviour
     
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private UiController uiController;
+    [SerializeField] private PlayerScoreCount scoreCount;
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -17,6 +18,7 @@ public class PlayerCollide : MonoBehaviour
             return;
         
 
+        scoreCount.TriggerSettingHighscore();
         
         Debug.Log("RIP");
         

@@ -4,6 +4,7 @@ public class PlayerScoreCount : MonoBehaviour
 {
     private Vector3 startPos;
     private int score;
+    private int highScore = 0;
 
     [SerializeField] private PlayerMovement playerMovement;
     [SerializeField] private UiController uiController;
@@ -33,5 +34,14 @@ public class PlayerScoreCount : MonoBehaviour
     {
         playerMovement.MovementSpeedMultiplier = 1 + score / 100f;
         //Debug.Log(playerMovement.MovementSpeedMultiplier);
+    }
+
+    public void TriggerSettingHighscore()
+    {
+        if (score > highScore)
+        {
+            highScore = score;
+            uiController.SetHighScore(highScore);
+        }
     }
 }
