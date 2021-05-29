@@ -28,6 +28,20 @@ public class PlayerMovement : MonoBehaviour
     // starting position for reseting
     private Vector3 startingPos;
 
+    // bools for game paused (= disable movement) & player dead (= resetting player position when unpausing)
+    private bool gamePaused = true;
+    public bool GamePaused
+    {
+        set => gamePaused = value;
+    }
+
+    private bool playerDead = false;
+    public bool PlayerDead
+    {
+        set => playerDead = value;
+    }
+    
+    
 
     void Start()
     {
@@ -40,6 +54,30 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // unpause game
+        if (gamePaused && Input.GetKeyDown(KeyCode.Return))
+        {
+            gamePaused = false;
+
+            // if player dead, reset player pos when 'unpausing'
+            if (playerDead)
+            {
+                pathToBeOn = Path.Mid;
+                MovementSpeedMultiplier = 1;
+
+                // reset position
+                rb.position = startingPos;
+
+                playerDead = false;
+            }
+        }
+        
+        
+        // if game is paused, ignore movement key inputs
+        if (gamePaused)
+            return;
+
+        
         // **********Movement********** //
         // Jump when touching ground (check if vertical velocity is near 0 AND if y is near starting y (ground)
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
@@ -63,6 +101,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        // if game paused -> don't move forward
+        if (gamePaused)
+            return;
+        
         MoveForward();
         MoveToNewPath();
     }
@@ -133,21 +175,10 @@ public class PlayerMovement : MonoBehaviour
 
 
     private void MoveForward()
-
     {   
         Vector3 pos = rb.position;
         Vector3 forward = pos + new Vector3(0, 0, ForwardMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(forward);
-    }
-
-
-    public void ResetPlayer()
-    {
-        pathToBeOn = Path.Mid;
-        MovementSpeedMultiplier = 1;
-
-        // reset position
-        rb.position = startingPos;
     }
 }

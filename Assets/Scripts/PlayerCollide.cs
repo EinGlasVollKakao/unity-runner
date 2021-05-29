@@ -19,6 +19,8 @@ public class PlayerCollide : MonoBehaviour
         
         Debug.Log("RIP");
         
-        playerMovement.ResetPlayer();
+        // pause game & reset player
+        playerMovement.GamePaused = true;
+        playerMovement.PlayerDead = true;
     }
 }
