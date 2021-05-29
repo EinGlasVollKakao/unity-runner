@@ -32,12 +32,14 @@ public class PlayerMovement : MonoBehaviour
     private bool gamePaused = true;
     public bool GamePaused
     {
+        get => gamePaused;
         set => gamePaused = value;
     }
 
     private bool playerDead = false;
     public bool PlayerDead
     {
+        get => gamePaused;
         set => playerDead = value;
     }
     
