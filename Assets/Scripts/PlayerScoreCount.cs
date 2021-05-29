@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class PlayerScoreCount : MonoBehaviour
@@ -9,8 +6,7 @@ public class PlayerScoreCount : MonoBehaviour
     private int score;
 
     [SerializeField] private PlayerMovement playerMovement;
-    
-    [SerializeField] private TMP_Text scoreText;
+    [SerializeField] private UiController uiController;
     
     void Start()
     {
@@ -29,7 +25,8 @@ public class PlayerScoreCount : MonoBehaviour
     {
         Vector3 currentPos = new Vector3(0, 0, transform.position.z); // also only set z to measure only z distance
         score = (int) Vector3.Distance(startPos, currentPos);
-        scoreText.text = score.ToString();
+        
+        uiController.SetScore(score);
     }
     
     private void UpdateSpeedMultiplier()
