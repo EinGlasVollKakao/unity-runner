@@ -1,0 +1,67 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4978328551823033127
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.4000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.4000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 17.560429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.72221184
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1447.369
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9787444
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.20508394
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 23.669
+      objectReference: {fileID: 0}
+    - target: {fileID: 1636771891495840183, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2160931712849441549, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
+      propertyPath: m_Name
+      value: BirchTree Variant 2 (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f32ee4295666890d5b4eef9c73c534fb, type: 3}
