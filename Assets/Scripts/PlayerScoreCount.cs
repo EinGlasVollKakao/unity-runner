@@ -32,7 +32,7 @@ public class PlayerScoreCount : MonoBehaviour
     
     private void UpdateSpeedMultiplier()
     {
-        playerMovement.MovementSpeedMultiplier = 1 + score / 100f;
+        playerMovement.MovementSpeedMultiplier = 1 + score / 500f;
         //Debug.Log(playerMovement.MovementSpeedMultiplier);
     }
 

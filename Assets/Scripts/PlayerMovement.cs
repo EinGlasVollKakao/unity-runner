@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
             && Math.Abs(rb.velocity.y) < 0.1 && rb.position.y < startingPos.y + 0.1)
         {           
-            rb.AddForce(Vector3.up * 13.2f, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 13.4f, ForceMode.VelocityChange);
         }
 
         // right
