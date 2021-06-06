@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: ec3919f510c1f294cb5e73e80e24d799, type: 3}
       propertyPath: m_Name
-      value: Fence (1)
+      value: Fence
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec3919f510c1f294cb5e73e80e24d799, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec3919f510c1f294cb5e73e80e24d799, type: 3}
