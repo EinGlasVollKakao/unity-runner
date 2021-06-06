@@ -11432,7 +11432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1c38e713e7b8b02a8ec5f470a18c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 0}
+  uiController: {fileID: 1262704089}
 --- !u!54 &411417504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11464,9 +11464,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerMovement: {fileID: 0}
-  uiController: {fileID: 0}
-  scoreCount: {fileID: 0}
+  playerMovement: {fileID: 411417503}
+  uiController: {fileID: 1262704089}
+  scoreCount: {fileID: 411417506}
 --- !u!114 &411417506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11480,7 +11480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 411417503}
-  uiController: {fileID: 0}
+  uiController: {fileID: 1262704089}
 --- !u!4 &418100749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5531777153355139864, guid: eafa308989cb197ca9ef00d531c4abb5, type: 3}
