@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -11432,7 +11432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1c38e713e7b8b02a8ec5f470a18c60, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiController: {fileID: 1262704089}
+  uiController: {fileID: 0}
 --- !u!54 &411417504
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -11464,9 +11464,9 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  playerMovement: {fileID: 411417503}
-  uiController: {fileID: 1262704089}
-  scoreCount: {fileID: 411417506}
+  playerMovement: {fileID: 0}
+  uiController: {fileID: 0}
+  scoreCount: {fileID: 0}
 --- !u!114 &411417506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11480,7 +11480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 411417503}
-  uiController: {fileID: 1262704089}
+  uiController: {fileID: 0}
 --- !u!4 &418100749 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5531777153355139864, guid: eafa308989cb197ca9ef00d531c4abb5, type: 3}
@@ -18905,6 +18905,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Terrain (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6889387048046237719, guid: e4d225ecfa653d365ba553c7268d937f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c38a3611ccffaaa4f90db6c6566afd4c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e4d225ecfa653d365ba553c7268d937f, type: 3}
 --- !u!1001 &622448164
