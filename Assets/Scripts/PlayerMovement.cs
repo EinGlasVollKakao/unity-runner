@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     private Path currentPath = Path.Mid; // current path of player
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
-    private const float ForwardMovSpeed = 0.1f;
+    private const float ForwardMovSpeed = 0.2f;
     private const float HorizontalMovSpeed = 1;
 
     private float movementSpeedMultiplier = 1;
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
             && Math.Abs(rb.velocity.y) < 0.1 && rb.position.y < startingPos.y + 0.1)
         {           
-            rb.AddForce(Vector3.up * 7, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 13.2f, ForceMode.VelocityChange);
         }
 
         // right
