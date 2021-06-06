@@ -13,8 +13,7 @@ public class PlayerMovement : MonoBehaviour
         Mid,
         Right
     }
-
-    private Path currentPath = Path.Mid; // current path of player
+    
     private Path pathToBeOn = Path.Mid; // path that player should be on
 
     private const float ForwardMovSpeed = 0.2f;
@@ -162,22 +161,12 @@ public class PlayerMovement : MonoBehaviour
     private void MoveToNewPath()
     {
         Vector3 pos = rb.position;
-
-        if (pathToBeOn == currentPath)
-        {
-            return;
-        }
+        
 
         Vector3 pathPos = new Vector3(GetPathX(pathToBeOn), pos.y, pos.z);
         Vector3 newPos = Vector3.MoveTowards(pos, pathPos, HorizontalMovSpeed * movementSpeedMultiplier);
 
         rb.MovePosition(newPos);
-
-        // when player is already on pathToBeOn, update current path
-        if (pathPos == newPos)
-        {
-            currentPath = pathToBeOn;
-        }
     }
 
 
