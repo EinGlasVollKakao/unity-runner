@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &4430382319563248529
+--- !u!1001 &2670452973009152542
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -13,31 +13,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.14313388
+      value: 6.060676
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.1088253
+      value: 1.0285854
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.8879058
+      value: 495.25146
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.8192552
+      value: 0.64571697
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.52464885
+      value: -0.52055275
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.21152405
+      value: 0.22141269
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.09392652
+      value: -0.51288486
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -53,7 +53,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
       propertyPath: m_Name
-      value: lonelyBox_
+      value: lonelyBox_ Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d1c68fe0f1f32d841be717bba3e9ea25, type: 3}
