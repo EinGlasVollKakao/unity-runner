@@ -21,6 +21,9 @@ ModelImporter:
   - first:
       74: -3137926119070484544
     second: Cat|Run
+  - first:
+      74: 5742820988688457830
+    second: Cat|CatAction
   externalObjects: {}
   materials:
     materialImportMode: 2
