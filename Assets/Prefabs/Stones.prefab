@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -1002314499017216886}
   - component: {fileID: -5975457300521455650}
   - component: {fileID: 627722217737282343}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +105,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9096844211770993742}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stones
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: -7811772282614117175}
   - component: {fileID: 5647030559109417115}
   - component: {fileID: -6116088044704725040}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Stone.002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
