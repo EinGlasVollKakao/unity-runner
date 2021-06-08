@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] UiController uiController;
 
     private Rigidbody rb;
+    private Animator animator;
 
     private enum Path // Enum-obj for all possible paths
     {
@@ -50,6 +51,8 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
+        
         startingPos = rb.position;
         rb.interpolation = RigidbodyInterpolation.Interpolate;
         
@@ -58,6 +61,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        
+        animator.SetBool("isRunning", !gamePaused);
+
+        
         // unpause game
         if (gamePaused && Input.GetKeyDown(KeyCode.Return))
         {
@@ -85,11 +92,12 @@ public class PlayerMovement : MonoBehaviour
 
         
         // **********Movement********** //
-        // Jump when touching ground (check if vertical velocity is near 0 AND if y is near starting y (ground)
+        // Jump when touching ground (check if vertical (((velocity is near 0 AND))) if y is near starting y (ground)
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
-            && Math.Abs(rb.velocity.y) < 0.1 && rb.position.y < startingPos.y + 0.1)
+            && rb.position.y < startingPos.y + 0.1)
         {           
-            rb.AddForce(Vector3.up * 13.4f, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 12.5f, ForceMode.VelocityChange);
+            animator.SetTrigger("jump");
         }
 
         // right
