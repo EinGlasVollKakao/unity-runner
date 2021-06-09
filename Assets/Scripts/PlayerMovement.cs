@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) 
             && rb.position.y < startingPos.y + 0.1)
         {           
-            rb.AddForce(Vector3.up * 12.5f, ForceMode.VelocityChange);
+            rb.AddForce(Vector3.up * 13f, ForceMode.VelocityChange);
             animator.SetTrigger("jump");
         }
 
